@@ -1,0 +1,18 @@
+def fila_pascal(n):
+    fila = [1]
+    for i in range(1, n+1):
+        fila.append(int(fila[i-1]*(n-i+1)/i))
+    return fila
+
+n = int(input("Introduce el valor de n: "))
+
+triangulo = []
+for i in range(n+1):
+    triangulo.append(fila_pascal(i))
+
+for i in range(n+1):
+    for j in range(n-i+1):
+        print(end=" ")
+    for j in range(i+1):
+        print(triangulo[i][j], end=" ")
+    print()
